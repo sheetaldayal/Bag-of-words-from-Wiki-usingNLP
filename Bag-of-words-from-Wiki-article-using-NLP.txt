@@ -1,0 +1,69 @@
+import wikipedia
+p = wikipedia.page("Python programming language")
+print(p.url)
+print(p.title)
+content = p.content
+#print(content)
+file = (r'C:\Users\Bag-of-words-Python-Wiki.txt')
+#Save the text from wikipedia
+with open (file, 'w', encoding='utf-8') as f:
+    f.write(content)
+
+#Import necessary modules
+from collections import Counter
+from nltk.tokenize import word_tokenize, regexp_tokenize, sent_tokenize
+import re
+import seaborn as sns
+#Split content into senetence
+sentence = sent_tokenize(content)
+#Tokenize the fifth sentence
+tokens = word_tokenize(content[4])
+print(len(tokens))
+#Make a set of unique tokens in entire content
+unique_tokens = set(tokens)
+print(len(unique_tokens))
+
+# Convert the tokens into lowercase
+lower_tokens = [t.lower() for t in tokens]
+# Create a Counter with the lowercase tokens
+simple_words = Counter(lower_tokens)
+# Print the 20 most common tokens
+print(simple_words.most_common(20))
+# Search and print for the start and end occurrence of 'Guido'
+s = re.search('Guido', content)
+print(s.start(), s.end())
+#Create a regex pattern 
+pattern1 = r'\s|\[A-Z]|\[a-z]|\d\|?|!|\[.*]'
+print(re.search(pattern1, content))
+#Split content into lines
+lines = content.split('\n')
+#print(lines)
+lines = [re.sub(pattern1,'', l)for l in lines]
+#Tokenize each line
+tokenized_lines = [regexp_tokenize(s, '\w+') for s in lines]
+# Make a frequency list of lengths
+frequency_list = [len(t_lines) for t_lines in tokenized_lines]
+print(frequency_list)
+#Plot a kde for frequency list of lengths
+sns.kdeplot(frequency_list)
+
+# Import WordNetLemmatizer
+from nltk.stem import WordNetLemmatizer
+#Import English stopwords from corpus
+from nltk.corpus import stopwords
+#Create a set of stopwords in English
+stop_words = set(stopwords.words('english'))
+print(stop_words)
+# Retain alphabetic words
+alpha_only = [t for t in lower_tokens if t.isalpha()]
+# Remove all stop words
+no_stopword = [t for t in alpha_only if t not in stop_words]
+#print(alpha_only)
+#print(no_stopword)    #It's a long list so you can avoid printing it
+# Instantiate the WordNetLemmatizer
+wordnet_lemmatizer = WordNetLemmatizer()
+# Lemmatize all tokens into a new list
+lemmatized = [wordnet_lemmatizer.lemmatize(t) for t in no_stopword]
+# Create and print the 10 most common bag-of-words
+bag_of_words = Counter(lemmatized)
+print(bag_of_words.most_common(10))
