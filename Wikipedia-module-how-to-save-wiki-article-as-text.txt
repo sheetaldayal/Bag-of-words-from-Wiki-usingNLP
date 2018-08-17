@@ -1,0 +1,20 @@
+Wikipedia is a Python library that makes it easy to access and parse data from Wikipedia.
+Search Wikipedia, get article summaries, get data like links and images from a page, and more. 
+
+Here I've scraped an article on "Python programming language":
+https://en.wikipedia.org/wiki/Python_(programming_language)
+I saved the extracted article as text file named "Bag-of-words-Python-Wiki" on my computer.
+
+
+
+import wikipedia
+p = wikipedia.page("Python programming language")
+print(p.url)
+print(p.title)
+content = p.content
+#print(content)    #It's a large text so I avoided printing it
+
+file = (r'C:\Bag-of-words-Python-Wiki.txt')
+#Save the text from wikipedia
+with open (file, 'w', encoding='utf-8') as f:
+    f.write(content)
