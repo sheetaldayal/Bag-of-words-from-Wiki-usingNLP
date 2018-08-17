@@ -3,4 +3,9 @@ To check the list of stopwords you can type the following commands in the python
 
 import nltk
 from nltk.corpus import stopwords
- set(stopwords.words('english'))
+set(stopwords.words('english'))
+
+
+This is what I got as an output:
+
+{'off', 'himself', 'out', 'of', "it's", 'your', 'doesn', 'such', 'down', 'does', 'it', "you've", 'll', 'those', 'how', 'should', 'whom', 'me', 'hasn', 'its', 'yourselves', 'too', 'm', 'and', 'mustn', 'we', "didn't", 'shan', "aren't", 'once', "that'll", "shouldn't", 'hadn', 'if', 'yours', 'have', "mightn't", 'were', 'ma', "needn't", 'now', 'can', 'through', 'before', "you're", 'doing', 'isn', 'any', 'them', 'didn', 'my', 'their', 'he', 'ourselves', 'shouldn', 'y', 'who', 'under', 'up', 'because', 'while', 'which', 'to', 'not', 'her', 'most', 'you', 've', 'they', 'these', 'has', "couldn't", 't', 'from', 'nor', 'haven', 'the', 'at', 'until', 'over', 'myself', 'yourself', 'some', 'further', 'than', 'mightn', "mustn't", 'themselves', 'needn', 'what', 'was', 'about', 'being', "wasn't", 'when', 'are', 'i', 'd', "isn't", "hadn't", "haven't", "shan't", 're', 'weren', 'so', 'no', 'o', 'this', 'wouldn', 'by', 's', 'other', "don't", 'his', 'aren', 'for', 'own', 'ain', 'after', 'then', 'did', 'as', 'hers', 'why', 'just', "you'll", 'all', 'won', 'where', 'both', 'herself', 'in', 'our', 'but', 'few', 'that', 'had', 'do', 'during', 'having', 'am', "hasn't", "doesn't", 'with', 'on', 'be', 'against', 'an', "should've", 'ours', 'wasn', 'don', 'into', 'been', 'here', 'will', 'is', "wouldn't", 'again', 'him', 'above', 'she', "weren't", 'theirs', 'a', 'same', 'below', 'very', 'there', 'or', 'each', "you'd", 'couldn', 'more', "won't", 'only', 'between', 'itself', "she's"}
