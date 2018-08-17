@@ -1,0 +1,17 @@
+What are regular expressions?
+
+Strings with a special syntax
+Allow us to match patterns in other strings
+Applications of regular expressions:
+Find all web links in a document
+Parse email addresses, remove/replace unwanted characters
+Example:
+
+import re
+re.match('abc', 'abcdef')
+<_sre.SRE_Match object; span=(0, 3), match='abc'>
+word_regex = '\w+'
+re.match(word_regex, 'hi there!')
+<_sre.SRE_Match object; span=(0, 2), match='hi'>
+
+

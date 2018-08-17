@@ -1,0 +1,10 @@
+pattern 		matches 		example
+
+\w+ 			word 			'Python'
+\d 			digit 			    7
+\s 			space 			   ' '
+.* 			wildcard 		'user85'
++ or * 			greedy match 		'aaaaaa'
+\S 			not space 		'no_spaces'
+[a-z] 			lowercase alphabets	'abcde'
+[A-Z]			uppercase alphabets	'ABCDE'
