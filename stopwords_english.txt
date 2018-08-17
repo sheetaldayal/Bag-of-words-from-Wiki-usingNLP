@@ -1,0 +1,6 @@
+To check the list of stopwords you can type the following commands in the python shell.
+
+
+import nltk
+from nltk.corpus import stopwords
+ set(stopwords.words('english'))
