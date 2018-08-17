@@ -1,1 +1,1 @@
-# Bag-of-words-from-Wiki-usingNLP
+# Bag-of-words-from-Wiki-article-usingNLP
